@@ -1,5 +1,6 @@
 # http://www.chessbin.cf
 
+Make fast chess pgns.
 ## Project setup
 ```
 npm install
