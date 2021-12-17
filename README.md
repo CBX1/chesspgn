@@ -1,4 +1,4 @@
-# chessbin
+# https://www.chessbin.cf
 
 ## Project setup
 ```
