@@ -3,6 +3,7 @@
     <div v-if="checker">
     <div style="text-align:center">
 
+ 
 
 <table style="margin: 0 auto;width:80%">
   <tbody>
@@ -21,8 +22,23 @@
   </tbody>
 </table>
 <br>
+
   </div>
+  
         <div style="margin: 0 auto" id="board" />
+<h3 style="text-align:center"> Raw PGN </h3>
+<div style="margin: 0 auto">
+<form style="text-align:centerg">
+     <input 
+           v-on:focus="$event.target.select()" 
+           ref="myinput" 
+           readonly 
+           :value="pgnstr" style="margin: 0 auto; width:80%"/>
+</form>
+</div>
+    <div style="text-align:center">
+    <button style="margin: 0 auto" @click="copy">Copy</button>
+    </div>
     </div>
 </div>
 </template>
@@ -31,7 +47,6 @@
 // @ is an alias to /src
 import { getPGN } from '../../firebase'
 import { pgnView } from '@mliebelt/pgn-viewer';
-
 export default {
   name: 'Pgn',
   data() {
@@ -53,8 +68,11 @@ export default {
     }, 
  
  methods: {
-  
-    async create(){
+   copy() {
+      this.$refs.myinput.focus();
+      document.execCommand('copy');
+    },
+       async create(){
      await getPGN(this.hh).then(value => {
                 this.pgnstr = value
                 console.log(this.pgnstr)
