@@ -28,13 +28,13 @@
         <div style="margin: 0 auto" id="board" />
 <h3 style="text-align:center"> Raw PGN </h3>
 <div style="margin: 0 auto">
-<form style="text-align:centerg">
+<div style="text-align:center">
      <input 
            v-on:focus="$event.target.select()" 
            ref="myinput" 
            readonly 
-           :value="pgnstr" style="margin: 0 auto; width:80%"/>
-</form>
+           :value="pgnstr" style="width:80%"/>
+</div>
 </div>
     <div style="text-align:center">
     <button style="margin: 0 auto" @click="copy">Copy</button>
